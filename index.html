@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>kendi list projem</title>
+    <style>
+.containerc{
+    height: 1000px;
+    background-color:peachpuff;
+}
+#lists {
+    color: white;
+}
+
+.btn{
+    width: 9em;
+    height: 4em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+
+}
+
+.btn::before{
+    content: '';
+    width: 0;
+    height: 4em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #4d42cb 0%, #e08f7f 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.btn:hover::before{
+    width: 9em;
+
+}
+
+    </style>
+</head>
+
+<body>
+    <div id="container"  class="containerc" >
+        <div class="card-row">
+            <div class="card-header" style="background-color:lightcoral;">YAPILACAKLAR LİSTESİ</div>
+            <div class="card-body" >
+                <form id="list-form">
+                    <div class="form-row">
+                        <div class="form-group" style="margin: 25px;">
+                            <input style="margin-left: 5px; padding: 4px; border: 3px " id="date"
+                                class="form-control" type="text" placeholder="TARİH GİRİNİZ">
+                        </div>
+                        <div class="form-group" style="margin: 25px;">
+                            <input style="margin-left: 5px; padding: 4px; border: 3px " id="activite"
+                                class="form-control" type="text" placeholder="AKTİVİTE">
+                        </div>
+
+                    </div>
+                    <button style="margin: 25px;" type="submit" class="btn btn-outline-danger">listeye ekle</button>
+                </form>
+
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">YAPILACAKLAR LİSTESİ</h5>
+                <table class="table bg-danger">
+                    <thead>
+                        <tr style="color: white;">
+                            <th scope="col">TARİH</th>
+                            <th scope="col">AKTİVİTE</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody id="lists">
+                        <!-- <tr>
+                                    <td><img src="" class="img-fluid img-thumbnail"></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="#" id = "delete-film" class = "btn btn-danger">Filmi Sil</a></td>
+                                  </tr> -->
+
+
+                    </tbody>
+
+                </table>
+                <a href="#" id="clear-list" style="color:white;" class="btn btn-danger">TÜM LİSTEYİ TEMİZLE</a>
+            </div>
+        </div>
+    </div>
+<script src="list.js"></script>
+   <script src="storage.js"></script> 
+    <script src="ui.js"></script>
+    <script src="project.js"></script>
+
+</body>
+
+</html>
